@@ -22,7 +22,9 @@
     "@angular/router": "~7.0.0",
     "bulma": "^0.7.4",
     "core-js": "^2.5.4",
+    "ng2-slim-loading-bar": "^4.0.0",
     "rxjs": "~6.3.3",
+    "rxjs-compat": "^6.4.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
