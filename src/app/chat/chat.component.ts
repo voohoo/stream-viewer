@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+
+import Message from './Message';
 
 @Component({
   selector: 'app-chat',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
+  messages: Message[];
+  chatForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.messages = [];
+    this.createForm();
+  }
+
+  createForm() {
+    this.chatForm = this.fb.group({
+      text: ['', Validators.required]
+    });
+  }
 
   ngOnInit() {
+    this.messages.push({ username: 'Voohoo', text: 'hi :)' });
+    this.messages.push({ username: 'Huanway', text: 'sup' });
   }
 
 }

@@ -1,3 +1,36 @@
-<p>
-  chat works!
-</p>
+<section class="section">
+  <div class="container">
+    <div class="box content">
+
+      <p class="title is-5">Stream Chat</p>
+
+      <div class="message-box">
+        <div *ngFor="let message of messages">
+          <span class="username has-text-weight-bold">{{ message.username }}: </span>
+          <span class="message-text">{{ message.text }}</span>
+        </div>
+      </div>
+
+      <form [formGroup]="chatForm" novalidate>
+        <div class="message-input">
+          <div class="field">
+            <div class="control">
+              <textarea formControlName="text"
+                  class="textarea"
+                  placeholder="Send a message"
+                  rows="2"
+                  #text></textarea>
+            </div>
+          </div>
+          <div class="control has-text-right">
+            <button class="button is-primary"
+                [disabled]="chatForm.pristine || chatForm.invalid">
+              Chat
+            </button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
