@@ -5,14 +5,32 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
+  id_token: String;
+  id: String;
+  name: String;
+  givenName: String;
+  familyName: String;
+  imageUrl: String;
+  email: String;
+
   constructor() {
-    this.profile = null;
     this.id_token = null;
+    this.id = null;
+    this.name = null;
+    this.givenName = null;
+    this.familyName = null;
+    this.imageUrl = null;
+    this.email = null;
   }
 
   setProfile(profile) {
-    this.profile = profile;
-    console.log(this.profile);
+    console.log(profile);
+    this.id = profile.getId();
+    this.name = profile.getName();
+    this.givenName = profile.getGivenName();
+    this.familyName = profile.getFamilyName();
+    this.imageUrl = profile.getImageUrl();
+    this.email = profile.getEmail();
   }
 
   setIdToken(id_token) {
@@ -20,28 +38,32 @@ export class UserService {
     console.log(this.id_token);
   }
 
+  isLogged() {
+    return this.id_token !== null;
+  }
+
   getId() {
-    return this.profile.getId();
+    return this.id;
   }
 
   getName() {
-    return this.profile.getName();
+    return this.name;
   }
 
   getGivenName() {
-    return this.profile.getGivenName();
+    return this.givenName;
   }
 
   getFamilyName() {
-    return this.profile.getFamilyName();
+    return this.familyName;
   }
 
   getImageUrl() {
-    return this.profile.getImageUrl();
+    return this.imageUrl;
   }
 
   getEmail() {
-    return this.profile.getEmail();
+    return this.email;
   }
 
 }
