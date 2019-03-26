@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +25,9 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SlimLoadingBarModule
+    SlimLoadingBarModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [ ChatService ],
   bootstrap: [ AppComponent ]
