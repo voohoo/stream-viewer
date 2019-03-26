@@ -14,11 +14,6 @@ mongoose.connect(config.DB, { useNewUrlParser: true }).then(
 
 const app = express();
 app.use(bodyParser.json());
-
-// Create link to Angular build directory
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
-
 app.use(cors());
 app.use('/chat', chatRoute);
 let port = process.env.PORT || 4000;
