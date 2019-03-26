@@ -24,7 +24,6 @@ export class UserService {
   }
 
   setProfile(profile) {
-    console.log(profile);
     this.id = profile.getId();
     this.name = profile.getName();
     this.givenName = profile.getGivenName();
@@ -35,11 +34,20 @@ export class UserService {
 
   setIdToken(id_token) {
     this.id_token = id_token;
-    console.log(this.id_token);
   }
 
   isLogged() {
     return this.id_token !== null;
+  }
+
+  signOut() {
+    this.id_token = null;
+    this.id = null;
+    this.name = null;
+    this.givenName = null;
+    this.familyName = null;
+    this.imageUrl = null;
+    this.email = null;
   }
 
   getId() {

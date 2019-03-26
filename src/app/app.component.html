@@ -10,7 +10,16 @@
   <div id="streamViewerNav" class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        <div [hidden]="!isLogged()">
+          Welcome, <span class="has-text-weight-bold">{{ getName() }}</span>
+          <button id="sign-out-btn"
+              class="button is-primary is-small is-outlined"
+              onClick="signOut()"
+              (click)="signOutApp()">
+            Sign Out
+          </button>
+        </div>
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" [hidden]="isLogged()"></div>
       </div>
     </div>
   </div>

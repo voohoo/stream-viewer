@@ -19,16 +19,29 @@ export class AppComponent {
   title = 'stream-viewer';
 
   constructor(private _loadingBar: SlimLoadingBarService,
-      private _router: Router,
+      private router: Router,
       ngZone: NgZone,
       private us: UserService) {
-    this._router.events.subscribe((event: Event) => {
+    this.router.events.subscribe((event: Event) => {
       this.navigationInterceptor(event);
     });
 
     window['onSignIn'] = user => {
       ngZone.run(() => this.onSignIn(user))
     };
+  }
+
+  isLogged() {
+    return this.us.isLogged();
+  }
+
+  getName() {
+    return this.us.getName();
+  }
+
+  signOutApp() {
+    this.us.signOut();
+    this.router.navigate(['login']);
   }
   
   private navigationInterceptor(event: Event): void {
@@ -54,6 +67,8 @@ export class AppComponent {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     this.us.setIdToken(id_token);
+
+    this.router.navigate(['home']);
   }
 
 }

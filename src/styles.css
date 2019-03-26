@@ -3,6 +3,7 @@
 
 html, body {
   background-color: #F2F6FA;
+  min-height: 100vh;
 }
 
 .stream-wrapper {
