@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
-import Message from './Message';
+import Chat from './Chat';
+import { ChatService } from './chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -10,11 +11,11 @@ import Message from './Message';
 })
 export class ChatComponent implements OnInit {
 
-  messages: Message[];
+  chats: Chat[];
   chatForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.messages = [];
+  constructor(private fb: FormBuilder, private cs: ChatService) {
+    this.chats = [];
     this.createForm();
   }
 
@@ -24,9 +25,28 @@ export class ChatComponent implements OnInit {
     });
   }
 
+  addChat(text) {
+    if (!text) return;
+    
+    let chat = new Chat();
+    chat.username = 'temp';
+    chat.text = text;
+    this.cs.addChat(chat)
+      .subscribe(data => {
+        this.chatForm.get('text').setValue('');
+        this.getChats();
+      })
+  }
+
+  getChats() {
+    this.cs.getChats()
+      .subscribe((data: Chat[]) => {
+        this.chats = data;
+      });
+  }
+
   ngOnInit() {
-    this.messages.push({ username: 'Voohoo', text: 'hi :)' });
-    this.messages.push({ username: 'Huanway', text: 'sup' });
+    this.getChats();
   }
 
 }
