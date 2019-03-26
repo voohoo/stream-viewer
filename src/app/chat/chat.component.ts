@@ -48,6 +48,10 @@ export class ChatComponent implements OnInit {
       });
   }
 
+  getImageUrl() {
+    return this.us.getImageUrl();
+  }
+
   ngOnInit() {
     this.getChats();
   }
