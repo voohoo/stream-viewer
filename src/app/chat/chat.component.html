@@ -6,9 +6,11 @@
 
       <div class="chat-box" #scrollMe [scrollTop]="scrollMe.scrollHeight">
         <div *ngFor="let chat of chats" class="chat">
-          <span><img src="{{ getImageUrl() }}" class="user-image"></span>
-          <span class="has-text-weight-bold">{{ chat.username }}: </span>
-          <span>{{ chat.text }}</span>
+          <p>
+            <img src="{{ getImageUrl() }}" class="user-image" align="top">
+            <span class="has-text-weight-bold ">{{ chat.username }}: </span>
+            {{ chat.text }}
+          </p>
         </div>
       </div>
 
