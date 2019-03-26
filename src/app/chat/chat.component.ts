@@ -16,7 +16,7 @@ export class ChatComponent implements OnInit {
   chatForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-      private cs: ChatService
+      private cs: ChatService,
       private us: UserService) {
     this.chats = [];
     this.createForm();
