@@ -1,3 +1,17 @@
 .chat-input {
   margin-top: 1.25rem;
 }
+
+.chat-box {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.user-image {
+  height: 24px;
+  margin-right: 1rem;
+}
+
+.chat {
+  margin: 1rem 0rem;
+}
