@@ -9,7 +9,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+This app runs 3 servers for development: MongoDB, nodemon, and Angular.
+
+Run `mongod` to start the MongoDB server. Make sure you have MongoDB installed globally on your machine.
+
+Run `npm run nodemon` to start the nodemon server which will restart everytime you make changes to `server.js`.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run
 
 ## Code scaffolding
 
