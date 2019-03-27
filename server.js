@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
-
+console.log('Running server.js!!!!!!!');
 var CONTACTS_COLLECTION = "contacts";
 
 const chatRoute = require('./api/routes/chat.route');
