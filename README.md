@@ -2,11 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
-## Assumptions
-- Hardcoded link to Funhaus YT channel because they are gaming-related and always live
-- Did not store user profiles in persistent storage
-- Did not differentiate between a regular "viewer" and a "super fan"
-
 ## Development server
 
 This app runs 3 servers for development: MongoDB, nodemon, and Angular.
