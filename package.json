@@ -23,7 +23,7 @@
     "body-parser": "^1.18.3",
     "bulma": "^0.7.4",
     "core-js": "^2.5.4",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "mongodb": "^3.2.2",
     "ng2-slim-loading-bar": "^4.0.0",
     "rxjs": "~6.3.3",
